@@ -2,7 +2,7 @@
 
 전공동아리 GRAM의 Android 정규스터디입니다.
 
-[가이드라인](https://github.com/new-gram/Baseline/wiki/가이드-:-Dev-:-Android)을 기반으로 멘토링 위주의 스터디를 진행합니다.
+노션 그램위키의 가이드라인을 기반으로 멘토링 위주의 스터디를 진행합니다.
 
 ## 레포지토리 관리 방법
 
