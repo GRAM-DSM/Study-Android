@@ -13,17 +13,35 @@ import org.w3c.dom.Text;
 
 
 public class MainActivity extends AppCompatActivity {
-    int num1 = 0, num2 = 0;
+    String num1 = "", num2 = "";
     char delimiter;
-    TextView text;
-    EditText edit;
-    int position;
+    int position , check = 0, outputNum1 = 0, outputNum2 = 0;
+    TextView result_TextView;
+
+    public void insertNumber(int checkNumber) {
+        if(position == 0){
+            num1 += Integer.toString(checkNumber);
+        }
+        else{
+            num2 += Integer.toString(checkNumber);
+        }
+        outputNum1 = Integer.parseInt(num1);
+        outputNum2 = Integer.parseInt(num2);
+    }
+
+    public void resetVariable(){
+        num1 = "";
+        num2 = "";
+        position = 0;
+
+    }
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        text = (TextView)findViewById((R.id.ResultTextView));
+        result_TextView = (TextView)findViewById((R.id.ResultTextView));
         final Button OneButton = (Button)findViewById(R.id.OneButton);
         final Button TwoButton = (Button)findViewById(R.id.TwoButton);
         final Button ThreeButton = (Button)findViewById(R.id.ThreeButton);
@@ -45,84 +63,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(v == OneButton){
-                    if(num1 == 0){
-                        num1 = 1;
-                    }
-                    else if(num2 == 0){
-                        num2 = 1;
-                    }
+                    insertNumber(1);
                 }
                 else if(v == TwoButton) {
-                    if(num1 == 0){
-                        num1 = 2;
-                    }
-                    else if(num2 == 0){
-                        num2 = 2;
-                    }
+                    insertNumber(2);
                 }
                 else if(v == ThreeButton){
-                    if(num1 == 0){
-                        num1 = 3;
-                    }
-                    else if(num2 == 0){
-                        num2 = 3;
-                    }
+                    insertNumber(3);
                 }
                 else if(v == FourButton){
-                    if(num1 == 0){
-                        num1 = 4;
-                    }
-                    else if(num2 == 0){
-                        num2 = 4;
-                    }
+                    insertNumber(4);
                 }
                 else if(v == FiveButton){
-                    if(num1 == 0){
-                        num1 = 5;
-                    }
-                    else if(num2 == 0){
-                        num2 = 5;
-                    }
+                    insertNumber(5);
                 }
                 else if(v == SixButton){
-                    if(num1 == 0){
-                        num1 = 6;
-                    }
-                    else if(num2 == 0){
-                        num2 = 6;
-                    }
+                    insertNumber(6);
                 }
                 else if(v == SevenButton){
-                    if(num1 == 0){
-                        num1 = 7;
-                    }
-                    else if(num2 == 0){
-                        num2 = 7;
-                    }
+                    insertNumber(7);
                 }
                 else if(v == EightButton){
-                    if(num1 == 0){
-                        num1 = 8;
-                    }
-                    else if(num2 == 0){
-                        num2 = 8;
-                    }
+                    insertNumber(8);
                 }
                 else if(v == NineButton){
-                    if(num1 == 0){
-                        num1 = 9;
-                    }
-                    else if(num2 == 0){
-                        num2 = 9;
-                    }
+                    insertNumber(9);
                 }
                 else if(v == ZeroButton){
-                    if(num1 == 0){
-                        num1 = 0;
-                    }
-                    else if(num2 == 0){
-                        num2 = 0;
-                    }
+                    insertNumber(0);
                 }
 
                 else if(v == PlusButton){
@@ -142,32 +110,22 @@ public class MainActivity extends AppCompatActivity {
                     position = 4;
                 }
                 else if(v == ClearButton){
-                    text.setText(" ");
+                    result_TextView.setText(" ");
+                    resetVariable();
+
                 }
                 else if(v == EqualButton){
                     if(position == 1){
-                        text.setText(text.getText().toString() + (num1 + num2));
-                        num1 = 0;
-                        num2 = 0;
-                        position = 0;
+                        result_TextView.setText(result_TextView.getText().toString() + (outputNum1 + outputNum2));
                     }
                     else if(position == 2){
-                        text.setText(text.getText().toString() + (num1 - num2));
-                        num1 = 0;
-                        num2 = 0;
-                        position = 0;
+                        result_TextView.setText(result_TextView.getText().toString() + (outputNum1 - outputNum2));
                     }
                     else if(position == 3){
-                        text.setText(text.getText().toString() + (num1 * num2));
-                        num1 = 0;
-                        num2 = 0;
-                        position = 0;
+                        result_TextView.setText(result_TextView.getText().toString() + (outputNum1 * outputNum2));
                     }
                     else if(position == 4){
-                        text.setText(text.getText().toString() + (num1 / num2));
-                        num1 = 0;
-                        num2 = 0;
-                        position = 0;
+                        result_TextView.setText(result_TextView.getText().toString() + (outputNum1 / outputNum2));
                     }
                 }
             }
@@ -187,5 +145,6 @@ public class MainActivity extends AppCompatActivity {
         MultiplyButton.setOnClickListener(cl);
         DivideButton.setOnClickListener(cl);
         EqualButton.setOnClickListener(cl);
+        ClearButton.setOnClickListener(cl);
     }
 }
