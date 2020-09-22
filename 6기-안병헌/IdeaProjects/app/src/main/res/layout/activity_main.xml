@@ -108,31 +108,31 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="162dp">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/PlusButton"
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="230dp"
                 android:text="+" />
 
             <Button
                 android:id="@+id/ZeroButton"
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="230dp"
                 android:text="0" />
 
             <Button
                 android:id="@+id/MinusButton"
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="230dp"
                 android:text="-" />
 
 
             <Button
                 android:id="@+id/EqualButton"
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="230dp"
                 android:text="=" />
         </TableRow>
     </TableLayout>
