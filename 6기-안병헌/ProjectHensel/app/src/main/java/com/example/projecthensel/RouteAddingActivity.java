@@ -28,7 +28,7 @@ public class RouteAddingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.route_adding_page);
         final int code2 = 1002;
-        returnButton = (Button) findViewById(R.id.allButton);
+        returnButton = (Button) findViewById(R.id.addToAllButton);
         addButton = (Button) findViewById(R.id.addButton);
         countText = (TextView)findViewById(R.id.countText);
         addressEdit = (EditText) findViewById(R.id.addressEdit);
@@ -36,7 +36,7 @@ public class RouteAddingActivity extends AppCompatActivity {
         monthEdit = (EditText)findViewById(R.id.monthEdit);
         dateEdit = (EditText)findViewById(R.id.dateEdit);
 
-        adapter = new DateAdapter();
+        //adapter = new DateAdapter();
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         returnButton.setOnClickListener(new View.OnClickListener() { // All Route 페이지로 이동하는 인텐트
@@ -61,7 +61,7 @@ public class RouteAddingActivity extends AppCompatActivity {
                         intent.putExtra("bool", "1");
                         intent.putExtra("month", month);
                         intent.putExtra("date", date);
-                        intent.putExtra("count", count);
+                        intent.putExtra("count", (count += 1));
                         startActivity(intent);
 
                         monthEdit.setText("");

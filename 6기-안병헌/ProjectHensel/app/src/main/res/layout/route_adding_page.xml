@@ -18,12 +18,13 @@
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/allButton"
+            android:id="@+id/addToAllButton"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/arrow_size"
             android:drawablePadding="5dp"
+            android:paddingStart="10dp"
             android:fontFamily="@font/notosanskrregular"
             android:paddingLeft="3dp"
             android:text="All Routes"
@@ -36,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:fontFamily="@font/notosanskrbold"
-            android:paddingLeft="56dp"
+            android:paddingLeft="46dp"
             android:text="Add Route"
             android:textColor="#000000"
             android:textSize="17sp" />

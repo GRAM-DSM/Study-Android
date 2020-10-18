@@ -13,11 +13,11 @@ import java.util.ArrayList;
 public class DateAdapter extends RecyclerView.Adapter<DateAdapter.ViewHolder>
                             implements OnDataItemClickListener {
 
-    private ArrayList<Data> data_list = new ArrayList<>();
+    private ArrayList<Data> items = new ArrayList<>();
     OnDataItemClickListener listener;
 
     public void addItem(Data data){
-        data_list.add(data);
+        items.add(data);
     }
 
     @NonNull
@@ -25,19 +25,19 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.ViewHolder>
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View itemView = inflater.inflate(R.layout.recyclerview, viewGroup, false);
-        ViewHolder viewHolder = new ViewHolder(itemView, this);
-        return viewHolder;
+//        ViewHolder viewHolder = new ViewHolder(itemView, this);
+        return new ViewHolder(itemView, this);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewholder, int position) {
-        Data item = data_list.get(position);
+        Data item = items.get(position);
         viewholder.setItem(item);
     }
 
     @Override
     public int getItemCount() {
-        return data_list.size();
+        return items.size();
     }
 
     @Override
@@ -71,7 +71,7 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.ViewHolder>
 
         public void setItem(Data item) {
             dateTextView.setText(item.getData());
-            countTextView.setText(item.getCount());
+            countTextView.setText(Integer.toString(item.getCount()));
         }
     }
 }
